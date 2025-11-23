@@ -30,4 +30,4 @@ replay_pid*
 /JobApplication/target
 /HibernateCourse/target
 /JobApplication/.idea
-/ecomproj/.vscode
+/*/.vscode
