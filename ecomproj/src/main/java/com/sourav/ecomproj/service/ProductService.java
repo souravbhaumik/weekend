@@ -13,6 +13,8 @@ import com.sourav.ecomproj.repo.ProductRepo;
 @Service
 public class ProductService {
 
+    int x; public String s;
+
     @Autowired
     private ProductRepo productRepo;
 
@@ -28,6 +30,10 @@ public class ProductService {
         product.setImageName(image.getOriginalFilename());
         product.setImageType(image.getContentType());
         product.setImageData(image.getBytes());
+        for (int i = 0; i<5; i++) {
+            int x = 10;
+            System.out.println(i);
+        }
         return productRepo.save(product);
     }
 
