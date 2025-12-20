@@ -51,11 +51,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity sec) throws Exception {
 
         sec.csrf(customizer -> customizer.disable())
-                .authorizeHttpRequests(request -> request
-                    .requestMatchers("register", "login")
-                    .permitAll()
-                    .anyRequest()
-                    .authenticated())
+                    .authorizeHttpRequests(request -> request
+                        .requestMatchers("register", "login")
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated()
+                    )
                 // .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -67,6 +68,13 @@ public class SecurityConfig {
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
+    }
+
+    @Bean
+    public SecurityFilterChain oauth2FilterChain(HttpSecurity sec) throws Exception {
+        sec.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+            .oauth2Login(Customizer.withDefaults());
+        return sec.build();
     }
 
 }

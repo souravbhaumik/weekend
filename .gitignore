@@ -28,3 +28,9 @@ replay_pid*
 /*/target
 /JobApplication/.idea
 /*/.vscode
+/.vscode/*
+/*/.gitignore
+/*/.gitattributes
+/*/.mvn
+/*/mvnw
+/*/mvnw.cmd
