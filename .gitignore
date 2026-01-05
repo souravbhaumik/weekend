@@ -34,3 +34,10 @@ replay_pid*
 /*/.mvn
 /*/mvnw
 /*/mvnw.cmd
+/*/*/.mvn
+/*/*/.vscode
+/*/*/target
+/*/*/.gitignore
+/*/*/.gitattributes
+/*/*/mvnw
+/*/*/mvnw.cmd
